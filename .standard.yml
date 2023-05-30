@@ -1,0 +1,10 @@
+fix: false             # default: false
+parallel: false        # default: false
+format: progress       # default: Standard::Formatter
+default_ignores: true  # default: true
+
+ignore:                # default: []
+  - 'bin/*'
+  - 'db/schema.rb'
+  - 'node_modules/**/*'
+  - 'vendor/**/*'

@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: postgres:11.2
+    ports:
+      - 30010:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: "123qweasd"
+
+volumes:
+  postgres_data:

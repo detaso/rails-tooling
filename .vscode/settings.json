@@ -1,0 +1,16 @@
+{
+  "solargraph.commandPath": ".bin/solargraph",
+  "standardRuby.commandPath": ".bin/standardrb",
+  "standardRuby.mode": "enableUnconditionally",
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": false,
+  "solargraph.formatting": false,
+  "[ruby]": {
+    "editor.defaultFormatter": "testdouble.vscode-standard-ruby",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.semanticHighlighting.enabled": true
+  },
+  "yaml.keyOrdering": false,
+  "erb.erb-lint.executePath": ".bin/"
+}

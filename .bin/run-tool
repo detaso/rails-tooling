@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euo pipefail
+
+WORKSPACE_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &>/dev/null && cd .. && pwd)
+
+command_name="$(basename "$0")"
+
+if command -v direnv &>/dev/null && direnv status | grep -q 'Found RC allowed true'; then
+        # Hide direnv output
+        export DIRENV_LOG_FORMAT=
+        exec direnv exec "${WORKSPACE_DIR}" "${command_name}" "$@"
+else
+        exec bundle exec "${command_name}" "$@"
+fi

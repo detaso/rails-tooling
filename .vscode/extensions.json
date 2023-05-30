@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "castwide.solargraph",
+    "koichisasada.vscode-rdbg",
+    "testdouble.vscode-standard-ruby",
+    "mkhl.direnv",
+    "editorconfig.editorconfig",
+    "manuelpuyol.erb-linter"
+  ]
+}
