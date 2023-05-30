@@ -38,3 +38,9 @@
 .devenv*
 devenv.local.nix
 .direnv*
+
+# Assets
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

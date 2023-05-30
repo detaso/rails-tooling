@@ -1,24 +1,56 @@
-# README
+# Rails Tooling
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## devenv setup
 
-Things you may want to cover:
+1. [Install nix](https://github.com/DeterminateSystems/nix-installer)
+2. Set up cachix:
 
-* Ruby version
+```sh
+nix profile install nixpkgs#cachix
+cachix use devenv
+# Note: it's ok to run the command to make your user a nix admin
+```
 
-* System dependencies
+3. Install devenv:
 
-* Configuration
+```sh
+nix profile install --accept-flake-config github:cachix/devenv/latest
+```
 
-* Database creation
+4. Install [OrbStack](https://orbstack.dev/)
+5. Install direnv:
 
-* Database initialization
+```sh
+brew install direnv
+```
 
-* How to run the test suite
+6. Add the following lines to your ~/.zshrc:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+export DIRENV_LOG_FORMAT=
+eval "$(direnv hook zsh)"
+```
 
-* Deployment instructions
+7. Change to your repository
+8. `direnv allow`
+9. Watch as devenv builds your environment.
 
-* ...
+## App setup
+
+1. `bundle install`
+2. `yarn install`
+3. `docker compose up -d` (starts databases in docker containers)
+4. `bin/setup`
+5. `dev up -df` (starts rails, etc)
+6. Open [localhost:3000](http://localhost:3000) in your browser
+
+
+## dev reference
+
+### Commands
+
+- `dev up -df` starts containers and processes in the background (that's the `-d`) and follows the output (that's the `-f`)
+- `dev down` shuts down containers and processes
+- `dev logs` Displays process and container logs
+- `dev restart` restarts any combination of processes and containers
+- `dev ps` displays the status of all containers and processes
